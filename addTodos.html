@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title>Add Todo</title>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700" rel="stylesheet">
+  <style>
+   body{
+    background: #fff;
+    font-family: 'Quicksand', sans-serif;
+   }
+   label{
+    display:block;
+    margin-bottom: 10px;
+   }
+   textarea{
+    width:100%;
+    resize:none;
+    border:none;
+    border-bottom:1px solid #ccc;
+   }
+   .submit-btn{
+    padding: 8px 12px;
+    background: #2196f3;
+    color:#fff;
+    border:1px solid #2196f3;
+    border-radius: 4px;
+    margin-top: 10px;
+   }
+  </style>
+</head>
+<body>
+  <form>
+    <div>
+      <label>Enter Todo</label>
+      <textarea rows="4" placeholder="Enter todo name" id="todo" autofocus></textarea>
+    </div>
+    <button class="submit-btn" type="submit">Add Todo</button>
+  </form>
+
+  <script>
+    const electron = require('electron');
+    const {ipcRenderer} = electron;
+    const form = document.querySelector('form');
+    form.addEventListener('submit', submitTodo);
+
+    //add Todo
+    function submitTodo(e){
+      e.preventDefault();
+      const item = document.querySelector('#todo').value;
+      ipcRenderer.send('item:add', item);
+    }
+
+
+  </script>
+</body>
+</html>

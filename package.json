@@ -1,0 +1,22 @@
+{
+  "name": "todo-electron-app",
+  "version": "1.0.0",
+  "description": "Simple todo app using electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saurabhjayx/todo-electron-app.git"
+  },
+  "author": "Saurabh Joshi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saurabhjayx/todo-electron-app/issues"
+  },
+  "homepage": "https://github.com/saurabhjayx/todo-electron-app#readme",
+  "dependencies": {
+    "electron": "^1.7.6"
+  }
+}
